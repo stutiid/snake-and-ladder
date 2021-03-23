@@ -22,8 +22,12 @@ public class SnakeLadderGame {
 				System.out.println("NO Play, your position is same as before " + position);
 			else if (option == 2) {
 				int tempPosition = position + dice;
-				position = tempPosition; // updating the position
-				System.out.println("you got ladder, your current position is = " + position);
+				if (tempPosition > 100) // need exact 100 to win
+					System.out.println("You need to get exact 100 your current positon is same as before " + position);
+				else {
+					position = tempPosition; // updating the position
+					System.out.println("you got ladder, your current position is = " + position);
+				}
 			} else {
 				int tempPosition = position - dice;
 				if (tempPosition < 0) // if tempPosition is negative then you have to restart
